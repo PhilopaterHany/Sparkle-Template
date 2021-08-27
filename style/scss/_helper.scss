@@ -38,7 +38,7 @@ $mainBR: 10px;
 @mixin secbackground($path) {
     background-color: $mainDark;
     background: $path;
-    background-position: bottom;
+    background-position: right;
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
