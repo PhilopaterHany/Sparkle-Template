@@ -111,7 +111,7 @@ header {
     }
 }
 section.landing {
-    @include secbackground(url(../../images/landing.jpg));
+    @include secbackground(url(../../images/landing.webp));
     width: 100%;
     height: 100vh;
     z-index: -1;
