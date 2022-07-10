@@ -53,6 +53,10 @@ html(lang="en")
                 .box(data-person=name)
                     img(src="images/team_0" + number + ".webp" alt="Member " + order)
                     p= desc
+        mixin social-media(link, icon)
+            li
+                a(href=link target="_blank")
+                    i(class="fab fa-" + icon)
         //- End Mixins
         //- Start Scroll To Top Button
         button#to-top
@@ -80,7 +84,7 @@ html(lang="en")
                                 a(href='#contact') Contact Us
         //- End Header
         //- Start Landing
-        section.landing
+        section.landing#home
             h1 design comes to those who wait
             p hello, this is onepage multipurpose template.
             a(href='#' target='_blank') learn more
@@ -168,7 +172,7 @@ html(lang="en")
                         button App
             .imgs
             .imgs
-                each num in [1,2,3,4]
+                each num in [1, 2, 3, 4]
                     .box
                         img(src="images/portfolio_0" + num +".webp" alt="Project " + num)
             .container
@@ -190,7 +194,7 @@ html(lang="en")
                     +team-mem("Michael Scofield", "4", "Four", "Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Quisque velit nisi, pretium ut lacinia in\, elementum id enim. Donec sollicitudin molestie malesuada")
         //- End Team
         //- Start Testimonials
-        section.testimonials
+        section.testimonials#testimonials
             .container
                 .box1
                     p Pellentesque in ipsum id orci porta dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Nulla quis lorem ut libero malesuada feugiat. Pellentesque in ipsum id orci porta dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Lorem ipsum dolor sit amet, consectetuquis ac lectus. Nulla quis lorem ut libero malesuada feugiat.
@@ -211,47 +215,23 @@ html(lang="en")
                 .content.links
                     h4 Links
                     ul
-                        li
-                            a(href='#') Home
-                        li
-                            a(href='#') Services
-                        li
-                            a(href='#') Portfolio
-                        li
-                            a(href='#') Testimonials
-                        li
-                            a(href='#') Support
-                        li
-                            a(href='#') Terms And Conditions
+                        each txt in ["Home", "Services", "Portfolio", "Testimonials", "Support", "Terms And Conditions"]
+                            li
+                                a(href="#")= txt
                 .content.about-us
                     h4 About Us
                     ul
-                        li
-                            a(href='#') Sign In
-                        li
-                            a(href='#') Register
-                        li
-                            a(href='#') About Us
-                        li
-                            a(href='#') Blog
-                        li
-                            a(href='#') Contact Us
-                .content.contact-us
+                        each txt in ["Sign In", "Register", "About Us", "Blog", "Contact Us"]
+                            li
+                                a(href="#")= txt
+                .content.contact-us#contact-us
                     h4 Contact Us
                     p Get in touch with us via mail phone.We are waiting for your call or message <a href='mailto:graphberry@gmail.com' target='_blank' class='mail'>graphberry@gmail.com</a>
                     ul
-                        li
-                            a(href='https://www.facebook.com/philopater.hany.3' target='_blank')
-                                i.fab.fa-facebook-f
-                        li
-                            a(href='https://www.twitter.com/PhilopaterHany4' target='_blank')
-                                i.fab.fa-twitter
-                        li
-                            a(href='#')
-                                i.fab.fa-google-plus-g
-                        li
-                            a(href='https://www.github.com/PhilopaterHany' target='_blank')
-                                i.fab.fa-github
+                        +social-media("https://facebook.com/philopater.hany.3", "fab fa-facebook-f")
+                        +social-media("https://twitter.com/PhilopaterHany4", "fab fa-twitter")
+                        +social-media("https://discord.com/#8178/", "fab fa-discord")
+                        +social-media("https://github.com/PhilopaterHany", "fab fa-github")
         //- End Footer
         //- Main JavaScript File
         script(src="js/master.js")
