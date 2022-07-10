@@ -167,18 +167,10 @@ html(lang="en")
                         button Development
                         button App
             .imgs
-                .box
-                    img(src='images/portfolio_01.webp' alt='First Project')
-                .box
-                    img(src='images/portfolio_02.webp' alt='Second Project')
-                .box
-                    img(src='images/portfolio_03.webp' alt='Third Project')
-                .box
-                    img(src='images/portfolio_04.webp' alt='Fourth Project')
-                .box
-                    img(src='images/portfolio_05.webp' alt='Fifth Project')
-                .box
-                    img(src='images/portfolio_06.webp' alt='Sixth Project')
+            .imgs
+                each num in [1,2,3,4]
+                    .box
+                        img(src="images/portfolio_0" + num +".webp" alt="Project " + num)
             .container
                 button.more like what you see?
         //- End Portfolio
